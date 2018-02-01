@@ -236,7 +236,7 @@ class SlackBot extends Adapter
     user = if event_or_user.type == 'user_change' then event_or_user.user else event_or_user
     newUser =
       id: user.id
-      name: user.name
+      name: user.profile.display_name
       real_name: user.real_name
       slack: {}
     newUser.email_address = user.profile.email if user.profile and user.profile.email
